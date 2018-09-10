@@ -1,0 +1,17 @@
+.main-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("../img/background_pattern.png");
+    background-size:  70px 70px;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0) 33%, rgba(0,0,0,0) 67%, rgba(0,0,0,0.5));
+    }
+}

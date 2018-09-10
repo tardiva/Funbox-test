@@ -1,0 +1,15 @@
+.content {
+    margin: 20px auto;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    font-family: $exo;
+
+    &__h {
+        margin-bottom: 25px;
+        color: $light-gray;
+        font-size: 36px;
+        font-weight: 400;
+    }
+}

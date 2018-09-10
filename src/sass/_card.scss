@@ -1,0 +1,241 @@
+.card {
+    $this: &;
+
+    $size: 47px;
+    $border-width: 4;
+    $border-radius: 10;
+    $default-color: $blue;
+
+    @mixin border($color) {
+        border: #{$border-width}px solid $color;
+        transition: border-color 0.4s;
+    }
+
+    width: 100%;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    font-family: $trebuchet;
+    cursor: pointer;
+
+    &__top {
+        margin-left: $size;
+        flex: 0 0 43px;
+        position: relative;
+        @include border($default-color);
+        border-bottom: none;
+        border-left: none;
+        border-radius: 0 #{$border-radius}px 0 0;
+        background-color: $light-gray;
+        &:before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -47px;
+            bottom: 0;
+            width: $size;
+            transform: skewx(-45deg);
+            transform-origin: 0 100%;
+            @include border($default-color);
+            border-right: none;
+            border-bottom: none;
+            background-color: $light-gray;
+        }
+    }
+
+    &__bottom {
+        padding: 10px;
+        position: relative;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include border($default-color);
+        border-top: none;
+        border-radius: 0 0 #{$border-radius}px #{$border-radius}px;
+        background-color: $light-gray;
+        z-index: 0;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: #{($border-radius - $border-width)}px;
+            background-image: url("../img/funbox_cat.png");
+            background-position: 0 100%;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+    }
+
+    &__content {
+        padding: 0 35px 10px;
+        position: relative;
+        flex: 1 1 auto; /*IE min-height fix*/
+        top: -35px;
+        text-align: left;
+    }
+
+    &__header-wrapper {
+        margin-bottom: 20px;
+    }
+
+    &__header {
+        font-size: 16px;
+
+        &--default {
+            display: block;
+            color: $gray2;
+        }
+
+        &--not-approved {
+            display: none;
+            color: $pink;
+        }
+    }
+
+    &__h {
+        margin-bottom: 5px;
+        font-size: 48px;
+    }
+
+    &__sub-h {
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+
+    &__text {
+        color: $gray2;
+        font-size: 14px;
+        line-height: 1.143;
+    }
+
+    &__badge {
+        margin-left: auto;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+        background-color: $default-color;
+        transition: background-color 0.4s;
+    }
+
+    &__badge-text {
+        color: $white;
+
+        &--lg {
+            font-size: 42px;
+        }
+
+        &--sm {
+            font-size: 21px;
+        }
+    }
+
+    &:hover:not(.no-hover) {
+        $color: $light-blue;
+
+        #{$this}__top {
+            border-color: $color;
+
+            &:before {
+                border-color: $color;
+            }
+        }
+
+        #{$this}__bottom {
+            border-color: $color;
+        }
+
+        #{$this}__badge {
+            background-color: $color;
+        }
+    }
+
+    &--selected {
+        $color: $pink;
+
+        #{$this}__top {
+            border-color: $color;
+
+            &:before {
+                border-color: $color;
+            }
+        }
+
+        #{$this}__bottom {
+            border-color: $color;
+        }
+
+        #{$this}__badge {
+            background-color: $color;
+        }
+
+        &:hover:not(.no-hover) {
+            $color: $light-pink;
+
+            #{$this}__top {
+                border-color: $color;
+
+                &:before {
+                    border-color: $color;
+                }
+            }
+
+            #{$this}__bottom {
+                border-color: $color;
+            }
+
+            #{$this}__badge {
+                background-color: $color;
+            }
+
+            #{$this}__header {
+                &--default {
+                    display: none;
+                }
+
+                &--not-approved {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &--disabled,
+    &--disabled:hover:not(.no-hover) {
+        $color: $gray;
+
+        cursor: auto;
+
+        #{$this}__top {
+            border-color: $color;
+
+            &:before {
+                border-color: $color;
+            }
+        }
+
+        #{$this}__bottom {
+            border-color: $color;
+
+            &:before {
+                opacity: 0.5;
+            }
+        }
+
+        #{$this}__content {
+            opacity: 0.35;
+        }
+
+        #{$this}__badge {
+            background-color: $color;
+        }
+    }
+}
