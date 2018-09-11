@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 var filesToDist = [
     './src/*.html',
     './src/css/**/*.*',
-    './src/images/**/*.*',
+    './src/img/**/*.*',
     './src/js//**/*.js'
 ];
 
