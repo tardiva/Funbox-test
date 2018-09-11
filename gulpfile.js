@@ -1,4 +1,3 @@
-
 'use strict';
 
 // Core references for this to work
@@ -60,7 +59,7 @@ gulp.task('sass:watch', function() {
 
 // resource cleaning task
 gulp.task('clean', function(){
-  return gulp.src(['dist/*'], {read:false})
+  return gulp.src(['docs/*'], {read:false})
   .pipe(clean());
 });
 
@@ -70,7 +69,7 @@ gulp.task('build:dist',['clean'], function(){
   // the base option sets the relative root for the set of files,
   // preserving the folder structure
   gulp.src(filesToDist, { base: './src/' })
-  .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('docs'));
 });
 
 gulp.task('default', ['build:css', 'sass:watch', 'serve']);
