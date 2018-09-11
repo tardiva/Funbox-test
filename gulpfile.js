@@ -12,8 +12,9 @@ var gulp = require('gulp'),
 var filesToDist = [
     './src/*.html',
     './src/css/**/*.*',
-    './src/images/**/*.*',
-    './src/js//**/*.js'
+    './src/img/**/*.*',
+    './src/js//**/*.js',
+    './src/fonts/**/*.*'
 ];
 
 // Use for stand-alone autoprefixer
