@@ -1,0 +1,9 @@
+<div class="product-grid__item grid-item js-item">
+    {{> card product=product class="grid-item__card"}}
+    <div class="grid-item__description">
+        <p class="grid-item__description--default">Чего сидишь? Порадуй котэ, <a class="grid-item__link js-link" href="#">купи.</a>
+        </p>
+        <p class="grid-item__description--selected">{{product.description}}</p>
+        <p class="grid-item__description--disabled">Печалька, {{product.variant}} закончился.</p>
+    </div>
+</div>

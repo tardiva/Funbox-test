@@ -6,7 +6,9 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     reload = browserSync.reload,
-    clean = require('gulp-clean');
+    clean = require('gulp-clean'),
+    handlebars = require('gulp-compile-handlebars'),
+    rename = require('gulp-rename');
 
 // var listing of files for dist build
 var filesToDist = [
@@ -37,20 +39,39 @@ gulp.task('build:css', function() {
         cascade: false
     }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./src/css'))
+        .pipe(gulp.dest('./docs/css'))
         .pipe(reload({stream: true}));
 });
+
+//
+gulp.task('build:hbs', function () {
+
+    var products = require('./src/data/products.json');
+
+    var templateData = {products: products },
+        options = {
+            partials : { },
+            batch : ['./src/partials'],
+            helpers : { }
+        };
+
+    return gulp.src('src/index.hbs')
+        .pipe(handlebars(templateData, options))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('docs'));
+});
+
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['build:css'], function() {
 
     browserSync.init({
-        server: "./src/",
+        server: "./docs/",
         port: 8080
     });
 
     gulp.watch('./src/sass/{,*/}*.{scss,sass}', ['build:css']);
-    gulp.watch("./src/*.html").on('change', browserSync.reload);
+    //gulp.watch("./src/*.hbs").on('change', browserSync.reload);
 });
 
 // Sass watcher

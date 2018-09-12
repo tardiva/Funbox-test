@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Нямушка",
+        "variant": "с фуа-гра",
+        "description": "Печень утки разварная с артишоками.",
+        "quantity": "<strong>10</strong> порций",
+        "gift": "мышь в подарок",
+        "weight": 2
+    },
+    {
+        "name": "Нямушка",
+        "variant": "с рыбой",
+        "description": "Головы щучьи с чесноком да свежайшая сёмгушка.",
+        "quantity": "<strong>40</strong> порций",
+        "gift": "<strong>2</strong> мыши в подарок",
+        "weight": 0.5
+    },
+    {
+        "name": "Нямушка",
+        "variant": "с курой",
+        "description": "Филе из цыплят с трюфелями в бульоне.",
+        "quantity": "<strong>100</strong> порций",
+        "gift": "<strong>5</strong> мышей в подарок",
+        "weight": 10
+    }
+]
