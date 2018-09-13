@@ -82,7 +82,7 @@ gulp.task('fonts', function() {
 });
 
 // Static Server + watching scss/hbs/js files
-gulp.task('serve', ['build:css', 'build:hbs'], function() {
+gulp.task('serve', ['build'], function() {
 
     browserSync.init({
         server: "./docs/",
@@ -132,4 +132,4 @@ gulp.task('build', function () {
     );
 });
 
-gulp.task('default', ['build', 'serve']);
+gulp.task('default', ['serve']);
