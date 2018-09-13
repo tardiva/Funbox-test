@@ -45,7 +45,7 @@
         }
 
         &--selected {
-            #{$this}__description {
+            #{$this}-description {
                 &--default {
                     display: none;
                 }
@@ -57,7 +57,7 @@
         }
 
         &--disabled {
-            #{$this}__description {
+            #{$this}-description {
                 &--default {
                     display: none;
                 }

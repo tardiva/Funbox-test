@@ -5,7 +5,8 @@
         "description": "Печень утки разварная с артишоками.",
         "quantity": "<strong>10</strong> порций",
         "gift": "мышь в подарок",
-        "weight": 2
+        "weight": 2,
+        "isAvailable": true
     },
     {
         "name": "Нямушка",
@@ -13,7 +14,8 @@
         "description": "Головы щучьи с чесноком да свежайшая сёмгушка.",
         "quantity": "<strong>40</strong> порций",
         "gift": "<strong>2</strong> мыши в подарок",
-        "weight": 0.5
+        "weight": 0.5,
+        "isAvailable": true
     },
     {
         "name": "Нямушка",
@@ -21,6 +23,7 @@
         "description": "Филе из цыплят с трюфелями в бульоне.",
         "quantity": "<strong>100</strong> порций",
         "gift": "<strong>5</strong> мышей в подарок",
-        "weight": 10
+        "weight": 10,
+        "isAvailable": false
     }
 ]

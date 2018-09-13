@@ -1,6 +1,6 @@
 <div class="product-grid {{class}}">
     {{#each items}}
-        <div class="product-grid__item js-item">
+        <div class="product-grid__item js-item {{#unless this.isAvailable}}product-grid__item--disabled{{/unless}}">
             {{> card product=this class="product-grid__item-card"}}
             <div class="product-grid__item-description">
                 <p class="product-grid__item-description--default">Чего сидишь? Порадуй котэ, <a class="product-grid__item-link js-link" href="#">купи.</a>

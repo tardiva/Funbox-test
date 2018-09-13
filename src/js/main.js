@@ -25,7 +25,7 @@
             return;
         }
         var card = item.querySelector('.js-card');
-        item.classList.toggle('grid-item--selected');
+        item.classList.toggle('product-grid__item--selected');
         card.classList.toggle('card--selected');
     }
 
