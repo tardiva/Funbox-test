@@ -83,7 +83,7 @@
         margin-bottom: 20px;
     }
 
-    &__header {
+    &__header-text {
         font-size: 16px;
 
         &--default {
@@ -196,7 +196,7 @@
                 background-color: $color;
             }
 
-            #{$this}__header {
+            #{$this}__header-text {
                 &--default {
                     display: none;
                 }
