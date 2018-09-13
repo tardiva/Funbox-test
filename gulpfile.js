@@ -30,9 +30,12 @@ gulp.task('build:hbs', ['clean:html'], function () {
     var products = require('./src/data/products.json');
     var templateData = {products: products },
         options = {
-            partials : { },
-            batch : ['./src/partials'],
-            helpers : { }
+            batch: [
+                './src/blocks/main-container',
+                './src/blocks/content',
+                './src/blocks/product-grid',
+                './src/blocks/card'
+            ]
         };
 
     return gulp.src('src/index.hbs')

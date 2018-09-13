@@ -1,8 +1,7 @@
 @import "normalize.scss";
 @import "fonts.scss";
 @import "variables.scss";
-@import "main-container";
-@import "product-grid.scss";
-@import "grid-item.scss";
-@import "content.scss";
-@import "card.scss";
+@import "../blocks/main-container/main-container";
+@import "../blocks/product-grid/product-grid";
+@import "../blocks/content/content";
+@import "../blocks/card/card";

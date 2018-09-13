@@ -9,17 +9,8 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<div class="main-container">
-    <div class="main-container__overlay"></div>
-    <section class="content">
-        <h1 class="content__h">Ты сегодня покормил кота?</h1>
-        <div class="content__product-grid product-grid">
-            {{#each products}}
-                {{> grid-item product=this}}
-            {{/each}}
-        </div>
-    </section>
-</div>
+
+{{> main-container }}
 
 <script src="https://cdn.polyfill.io/v2/polyfill.min.js" async defer></script>
 <script src="js/main.js"></script>
